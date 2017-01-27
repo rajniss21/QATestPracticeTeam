@@ -9,7 +9,7 @@ import tests.BaseTest;
 public class UserTest extends BaseTest{
         @Test
 public void TestThatAddNewUserWorks(){
-        login.setUsername("admin");
+            login.setUsername("admin");
             login.setPassword("admin");
             login.setLogin();
 
@@ -30,4 +30,4 @@ public void TestThatAddNewUserWorks(){
         }
 
 
-        }
+}
