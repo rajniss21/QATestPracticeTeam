@@ -14,7 +14,8 @@ public void TestThatAddNewUserWorks(){
             login.setLogin();
 
             Dashboard dashboard=new Dashboard(driver);
-            PageFactory.initElements(driver,dashboard);
+           dashboard.gotoUsers();
+            dashboard.gotoAddNewUser();
 
             AddNewUser addNewUser=new AddNewUser(driver);
             addNewUser.setUsername("Rajnish" );
