@@ -19,6 +19,11 @@ public class Dashboard {
     WebElement homeLink;
     @FindBy(xpath = ".//*[@id='wp-admin-bar-view-site']/a")
     WebElement visitSite;
+    @FindBy(xpath=".//*[@id='menu-pages']/a/div[3]")
+    WebElement pagesLink;
+
+    @FindBy(xpath=".//*[@id='menu-pages']/ul/li[3]/a")
+    WebElement addNewPageLink;
 
     public Dashboard(WebDriver driver){
         this.driver=driver;
@@ -32,5 +37,11 @@ public class Dashboard {
     }
     public void gotoVisitSiteLink(){
         new Actions(driver).moveToElement(visitSite).build().perform();
+    }
+    public void gotoPagesLink(){
+        new Actions(driver).moveToElement(pagesLink).build().perform();
+    }
+    public void gotoAddNewPageLink(){
+        new Actions(driver).moveToElement(addNewPageLink).build().perform();
     }
 }
