@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pageobjects.dashboard.Dashboard;
+import pageobjects.login.Login;
 import tests.BaseTest;
 
 
@@ -13,22 +14,15 @@ import tests.BaseTest;
  * Created by Ujjwal on 1/18/2017.
  */
 public class LoginTest extends BaseTest {
-    @Test
-    public void testThatLoginWorks() {
-        login.setUsername("admin");
-        login.setPassword("admin");
-        login.setLogin();
+   private Login login;
 
-        Dashboard dashboard= new Dashboard(driver);
-        String heading=dashboard.getSomeText();
-        Assert.assertEquals("Dashboard",heading);
+    @Before
+    public void setup(){
+        super.setup();
+        login=new Login(driver);
     }
     @Test
-    public void testThatLoginDosentWork(){
-        login.setUsername("admin1");
-        login.setPassword("admin");
-        login.setLogin();
-
+    public void testThatLoginWorksWithCorrectUsernameAndPassword(){
+        login.doLogin("admin","admin");
     }
-
 }
