@@ -35,6 +35,14 @@ public class MediaTest extends BaseTestLogin {
         mediaLibrary.filterDate("All dates");
         mediaLibrary.clickFilter();
     }
+    @Test
+    public void testThatSearchWorks(){
+        Dashboard dashboard=new Dashboard(driver);
+        dashboard.gotoMediaLibrary();
+
+        MediaLibrary mediaLibrary=new MediaLibrary(driver);
+        mediaLibrary.setSearch("coffee");
+    }
 
 
 }
