@@ -15,6 +15,8 @@ public class AddNewPage {
     WebElement addtitle;
     @FindBy(id = "tinymce")
     WebElement paragraphBody;
+    @FindBy(id = "content_ifr")
+    WebElement frame;
     @FindBy(id ="publish")
     WebElement publish;
 
@@ -26,7 +28,9 @@ public class AddNewPage {
         addtitle.sendKeys(addtitletext);
     }
     public void addParagraph(String addparagraphtext){
+        driver.switchTo().frame(frame);
         paragraphBody.sendKeys(addparagraphtext);
+        driver.switchTo().parentFrame();
     }
     public void clickPublishButton(){
         publish.click();

@@ -6,6 +6,10 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import pageobjects.pages.AddNewPage;
 
 /**
  * Created by RajniSh on 2/12/2017.
@@ -44,11 +48,9 @@ public class Dashboard {
     public void gotoVisitSiteLink(){
         new Actions(driver).moveToElement(visitSite).build().perform();
     }
-    public void gotoPagesLink(){
-        new Actions(driver).moveToElement(pagesLink).build().perform();
-    }
     public void gotoAddNewPageLink(){
-        new Actions(driver).moveToElement(addNewPageLink).build().perform();
+        new Actions(driver).moveToElement(pagesLink).build().perform();
+        new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOf(addNewPageLink)).click();
     }
     public void gotoMediaLibrary(){
     mediaPage.click();
