@@ -25,5 +25,16 @@ public class MediaTest extends BaseTestLogin {
         mediaLibrary.setSelector("Delete Permanently");
         mediaLibrary.pressApply();
     }
+    @Test
+    public void testThatFilterWorks(){
+        Dashboard dashboard=new Dashboard(driver);
+        dashboard.gotoMediaLibrary();
+
+        MediaLibrary mediaLibrary=new MediaLibrary(driver);
+        mediaLibrary.filterMedia("Images");
+        mediaLibrary.filterDate("All dates");
+        mediaLibrary.clickFilter();
+    }
+
 
 }
