@@ -22,6 +22,15 @@ public class MediaLibrary {
     @FindBy(id = "doaction")
     WebElement apply;
 
+    @FindBy(id = "attachment-filter")
+    WebElement selectAttachmentFilter;
+
+    @FindBy(id = "filter-by-date")
+    WebElement selectFilterByDate;
+
+    @FindBy(id = "post-query-submit")
+    WebElement filter;
+
     public MediaLibrary(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
@@ -37,11 +46,22 @@ public class MediaLibrary {
     public void setSelector(String selectortext){
         Select dropdown=new Select(selector);
         dropdown.selectByVisibleText(selectortext);
-
     }
     public void pressApply(){
         apply.click();
     }
+    public void filterMedia(String mediatextOne){
+        Select drpdown=new Select(selectAttachmentFilter);
+        drpdown.selectByVisibleText(mediatextOne);
+    }
+    public void filterDate(String dateText){
+        Select drpdown1=new Select(selectFilterByDate);
+        drpdown1.selectByVisibleText(dateText);
+    }
+    public void clickFilter(){
+        filter.click();
+    }
+
 
 
 }
