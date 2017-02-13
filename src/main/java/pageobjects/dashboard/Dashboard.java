@@ -28,6 +28,8 @@ public class Dashboard {
 
     @FindBy(xpath=".//*[@id='menu-pages']/ul/li[3]/a")
     WebElement addNewPageLink;
+    @FindBy(id = "adminmenumain")
+    WebElement allPage;
 
     @FindBy(xpath = ".//*[@id='menu-media']/a/div[3]")
     WebElement mediaPage;
@@ -51,6 +53,10 @@ public class Dashboard {
     public void gotoAddNewPageLink(){
         new Actions(driver).moveToElement(pagesLink).build().perform();
         new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOf(addNewPageLink)).click();
+    }
+    public void gotoAllPage(){
+        new Actions(driver).moveToElement(pagesLink).build().perform();
+        new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOf(allPage)).click();
     }
     public void gotoMediaLibrary(){
     mediaPage.click();
