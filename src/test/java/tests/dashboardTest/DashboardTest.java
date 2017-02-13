@@ -1,5 +1,6 @@
 package tests.dashboardTest;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import pageobjects.dashboard.Dashboard;
@@ -27,5 +28,12 @@ public class DashboardTest extends BaseTestLogin{
     public void testThatVisitSiteLinkWorks(){
         dashboard.gotoVisitSiteLink();
     }
+    @Test
+    public void testThatClicksMediaPage(){
+        dashboard.gotoMediaLibrary();
+        dashboard.gotoAddNewMedia();
+    }
+
+
 
 }

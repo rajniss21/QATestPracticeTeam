@@ -25,6 +25,12 @@ public class Dashboard {
     @FindBy(xpath=".//*[@id='menu-pages']/ul/li[3]/a")
     WebElement addNewPageLink;
 
+    @FindBy(xpath = ".//*[@id='menu-media']/a/div[3]")
+    WebElement mediaPage;
+
+    @FindBy(xpath = ".//*[@id='menu-media']/ul/li[3]/a")
+    WebElement addNewMedia;
+
     public Dashboard(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
@@ -43,5 +49,11 @@ public class Dashboard {
     }
     public void gotoAddNewPageLink(){
         new Actions(driver).moveToElement(addNewPageLink).build().perform();
+    }
+    public void gotoMediaLibrary(){
+    mediaPage.click();
+    }
+    public void gotoAddNewMedia(){
+        addNewMedia.click();
     }
 }
