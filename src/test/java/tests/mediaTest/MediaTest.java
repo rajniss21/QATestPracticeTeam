@@ -19,9 +19,11 @@ public class MediaTest extends BaseTestLogin {
     public void testThatMediaisDeleted(){
         Dashboard dashboard=new Dashboard(driver);
         dashboard.gotoMediaLibrary();
-        
 
         MediaLibrary mediaLibrary=new MediaLibrary(driver);
         mediaLibrary.clickCheckBox();
+        mediaLibrary.setSelector("Delete Permanently");
+        mediaLibrary.pressApply();
     }
+
 }
