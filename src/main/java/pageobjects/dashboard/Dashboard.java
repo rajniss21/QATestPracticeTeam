@@ -6,6 +6,8 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by RajniSh on 2/12/2017.
@@ -31,6 +33,12 @@ public class Dashboard {
     @FindBy(xpath = ".//*[@id='menu-media']/ul/li[3]/a")
     WebElement addNewMedia;
 
+    @FindBy(xpath = ".//*[@id='menu-posts']/a/div[3]")
+    WebElement posts;
+
+    @FindBy(xpath = ".//*[@id='menu-posts']/ul/li[3]/a")
+    WebElement addnewpost;
+
     public Dashboard(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
@@ -55,5 +63,10 @@ public class Dashboard {
     }
     public void gotoAddNewMedia(){
         addNewMedia.click();
+    }
+    public void gotoAddNewPost() {
+        posts.click();
+        addnewpost.click();
+
     }
 }

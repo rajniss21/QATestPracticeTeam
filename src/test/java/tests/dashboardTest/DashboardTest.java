@@ -33,6 +33,16 @@ public class DashboardTest extends BaseTestLogin{
         dashboard.gotoMediaLibrary();
         dashboard.gotoAddNewMedia();
     }
+    @Test
+    public void testThatPostsWorks(){
+        dashboard.gotoPosts();
+    }
+    @Test
+    public void testThatAddNewPostWorks(){
+        dashboard.gotoPosts();
+        dashboard.gotoAddNewPost();
+
+    }
 
 
 
