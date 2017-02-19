@@ -1,5 +1,6 @@
 package pageobjects.media;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,6 +32,9 @@ public class MediaLibrary {
     @FindBy(id = "post-query-submit")
     WebElement filter;
 
+    @FindBy(id = "media-search-input")
+    WebElement search;
+
     public MediaLibrary(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
@@ -60,6 +64,13 @@ public class MediaLibrary {
     }
     public void clickFilter(){
         filter.click();
+    }
+
+    public void setSearch(String searchingKeys){
+        search.click();
+        search.sendKeys(searchingKeys, Keys.ENTER);
+
+
     }
 
 
